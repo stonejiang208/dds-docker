@@ -26,8 +26,8 @@ RUN cd ${TAO_ROOT} && mv OpenDDS-3.12 DDS
 ADD config.h ${ACE_ROOT}/ace/
 ADD platform_macros.GNU ${ACE_ROOT}/include/makeinclude/
 
-RUN cd ${DDS_ROOT} \
-  && mwc.pl -type gnuace DDS_TAOv2.mwc \
+RUN cd ${ACE_ROOT} \
+  && mwc.pl -type gnuace TAO_ACE.mwc \
   && make -j 4
 RUN cd ${ACE_ROOT} \
    && find . -name ".obj" | xargs rm -rf
